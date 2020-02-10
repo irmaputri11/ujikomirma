@@ -180,8 +180,7 @@
                                                     <a class="dropdown-item" href="checkout.html">Checkout</a>
                                                 </div>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#"><span class="karl-level">hot</span> Shoes</a></li>
+
                                             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                                         </ul>
                                     </div>

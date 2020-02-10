@@ -22,9 +22,11 @@ Route::resource('/', 'frontend');
 Route::get('/shop', 'frontend@shop');
 Route::get('/produk-detail', 'frontend@produk_detail');
 Route::get('/admin', 'frontend@admin');
+Route::get('/contact', 'frontend@contact');
+
 
 Route::group(['prefix' => 'backend', 'middleware' => ['auth']], function () {
-    Route::resource('/admin','backend');
+    Route::resource('/produk','produkcontroller');
     Route::resource('/jenis_produk','jenis_produkController');
     Route::resource('/pengguna','penggunaController');
 });

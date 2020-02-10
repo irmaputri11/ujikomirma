@@ -17,8 +17,7 @@ class CreateProduksTable extends Migration
             $table->bigIncrements('id');
             $table->string('kd_produk');
             $table->string('nama_produk');
-            $table->string('id_jenis_produk');
-            $table->string('satuan');
+            $table->string('jumlah');
             $table->string('stok');
             $table->string('harga');
             $table->text('deskripsi');

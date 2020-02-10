@@ -31,6 +31,11 @@ class frontend extends Controller
         return view('admin');
     }
 
+    public function contact()
+    {
+        return view('contact');
+    }
+
 
     /**
      * Show the form for creating a new resource.

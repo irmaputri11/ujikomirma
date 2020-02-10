@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
+use App\produk;
+use Session;
 class produkcontroller extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class produkcontroller extends Controller
      */
     public function index()
     {
-        //
+        $produk = produk::all();
+        return view('backend.produk.index', compact('produk'));
     }
 
     /**
@@ -23,7 +26,8 @@ class produkcontroller extends Controller
      */
     public function create()
     {
-        //
+         $produk = produk::all();
+        return view('backend.produk.create', compact('produk'));
     }
 
     /**
@@ -33,8 +37,25 @@ class produkcontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {$produk = new produk();
+        $produk->kd_produk = $request->kd_produk;
+        $produk->nama_produk = $request->nama_produk;
+        $produk->jumlah = $request->jumlah;
+        $produk->stok = $request->stok;
+        $produk->harga = $request->harga;
+        $produk->deskripsi = $request->deskripsi;
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $path = public_path() .'/assets/img/produk';
+            $filename = Str::random(6) . '_'
+            . $file->getClientOriginalName();
+            $upload = $file->move(
+                $path,$filename
+            );
+            $produk->foto = $filename;
+        }
+        $produk->save();
+        return redirect()->route('produk.index');
     }
 
     /**
@@ -79,6 +100,13 @@ class produkcontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+         $produk = produk::findOrfail($id);
+        if(!produk::destroy($id)) return redirect()->back();
+        Session::flash("flash_notification",[
+            "level" => "Success",
+            "message" => "Berhasil menghapus<b>"
+                         . $produk->nama_produk."</b>"
+        ]);
+        return redirect()->route('produk.index');
     }
 }
