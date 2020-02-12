@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\produk;
+use File;
 use Session;
 class produkcontroller extends Controller
 {
@@ -13,9 +14,19 @@ class produkcontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $produk = produk::all();
+        if (
+            $request->ajax()
+        ) {
+            $response = [
+                'success' => true,
+                'data' =>  $produk,
+                'message' => 'Berhasil ditampilkan.'
+            ];
+            return response()->json($response, 200);
+        }
         return view('backend.produk.index', compact('produk'));
     }
 
@@ -37,13 +48,14 @@ class produkcontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {$produk = new produk();
+    {
+        $produk = new produk();
         $produk->kd_produk = $request->kd_produk;
         $produk->nama_produk = $request->nama_produk;
-        $produk->jumlah = $request->jumlah;
         $produk->stok = $request->stok;
         $produk->harga = $request->harga;
         $produk->deskripsi = $request->deskripsi;
+        // foto
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
             $path = public_path() .'/assets/img/produk';
@@ -56,6 +68,11 @@ class produkcontroller extends Controller
         }
         $produk->save();
         return redirect()->route('produk.index');
+        Session::flash("flash_notification",[
+            "level" => "success",
+            "message" => "Berhasil menyimpan <b>"
+                         . $produk->judul."</b>"
+        ]);
     }
 
     /**

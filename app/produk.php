@@ -8,7 +8,7 @@ class produk extends Model
 {
     protected $fillable = [
         'kd_produk','nama_produk','id_jenis_produk',
-        'satuan','stok','harga','deskripsi','foto'
+        'stok','harga','deskripsi','foto'
     ];
      public $timestamps = true;
 

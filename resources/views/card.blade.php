@@ -9,10 +9,10 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>irma skincare | Home</title>
+    <title>Karl - Fashion Ecommerce Template | Cart</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="{{ asset('assets/fase/img/core-img/favicon.ico')}}">
+    <link rel="icon" href="{{ asset('assets/karl/img/core-img/favicon.ico')}}">
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{{ asset('assets/karl/css/core-style.css')}}">
@@ -96,7 +96,7 @@
     <div id="wrapper">
 
         <!-- ****** Header Area Start ****** -->
-        <header class="header_area">
+        <header class="header_area bg-img background-overlay-white" style="background-image: url({{ asset('assets/karl/img/bg-img/bg-1.jpg')}});">
             <!-- Top Header Area Start -->
             <div class="top_header_area">
                 <div class="container h-100">
@@ -106,7 +106,7 @@
                             <div class="top_single_area d-flex align-items-center">
                                 <!-- Logo Area -->
                                 <div class="top_logo">
-                                    <a href="#"><img src="{{ asset('assets/karl/img/core-img/irma.png')}}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('assets/karl/img/core-img/logo.png')}}" alt=""></a>
                                 </div>
                                 <!-- Cart & Menu Area -->
                                 <div class="header-cart-menu d-flex align-items-center ml-auto">
@@ -169,18 +169,19 @@
 
                                     <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
                                         <ul class="navbar-nav animated" id="nav">
-                                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                                 <div class="dropdown-menu" aria-labelledby="karlDropdown">
-                                                    <a class="dropdown-item" href="/">Home</a>
-                                                    <a class="dropdown-item" href="shop">Shop</a>
-                                                    <a class="dropdown-item" href="produk-detail">Product Details</a>
-                                                    <a class="dropdown-item" href="card">Cart</a>
+                                                    <a class="dropdown-item" href="index.html">Home</a>
+                                                    <a class="dropdown-item" href="shop.html">Shop</a>
+                                                    <a class="dropdown-item" href="product-details.html">Product Details</a>
+                                                    <a class="dropdown-item" href="cart.html">Cart</a>
                                                     <a class="dropdown-item" href="checkout.html">Checkout</a>
                                                 </div>
                                             </li>
-
+                                            <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#"><span class="karl-level">hot</span> Shoes</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                                         </ul>
                                     </div>
@@ -217,266 +218,109 @@
         </section>
         <!-- ****** Top Discount Area End ****** -->
 
-        <!-- ****** Welcome Slides Area Start ****** -->
-        <section class="welcome_area">
-            <div class="welcome_slides owl-carousel">
-                <!-- Single Slide Start -->
-                <div class="single_slide height-800 bg-img background-overlay" style="background-image: url({{ asset('assets/karl/img/bg-img/bg-11.jpg')}});">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <div class="col-12">
-                                <div class="welcome_slide_text">
-                                    <h6 data-animation="bounceInDown" data-delay="0" data-duration="500ms">* Only today we offer free shipping</h6>
-                                    <h2 data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">women Beauty</h2>
-                                    <a href="#" class="btn karl-btn" data-animation="fadeInUp" data-delay="1s" data-duration="500ms">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Slide Start -->
-                <div class="single_slide height-800 bg-img background-overlay" style="background-image: url({{ asset('assets/karl/img/bg-img/bg-6.jpg')}});">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <div class="col-12">
-                                <div class="welcome_slide_text">
-                                    <h6 data-animation="fadeInDown" data-delay="0" data-duration="500ms">* Only today we offer free shipping</h6>
-                                    <h2 data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Summer Collection</h2>
-                                    <a href="#" class="btn karl-btn" data-animation="fadeInLeftBig" data-delay="1s" data-duration="500ms">Check Collection</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Slide Start -->
-                <div class="single_slide height-800 bg-img background-overlay" style="background-image: url({{ asset('assets/karl/img/bg-img/bg-7.jpg')}});">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <div class="col-12">
-                                <div class="welcome_slide_text">
-                                    <h6 data-animation="fadeInDown" data-delay="0" data-duration="500ms">* Face mask a day
-                                        keep a bad mood!</h6>
-                                    <h2 data-animation="bounceInDown" data-delay="500ms" data-duration="500ms">MASK FAIR</h2>
-                                    <a href="#" class="btn karl-btn" data-animation="fadeInRightBig" data-delay="1s" data-duration="500ms">Check Collection</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ****** Welcome Slides Area End ****** -->
-
-        <!-- ****** Top Catagory Area Start ****** -->
-        {{-- <section class="top_catagory_area d-md-flex clearfix">
-            <!-- Single Catagory -->
-            <div class="single_catagory_area d-flex align-items-center bg-img" style="background-image: url({{ asset('assets/karl/img/bg-img/bg-2.jpg')}});">
-                <div class="catagory-content">
-                    <h6>On Accesories</h6>
-                    <h2>Sale 30%</h2>
-                    <a href="#" class="btn karl-btn">SHOP NOW</a>
-                </div>
-            </div>
-            <!-- Single Catagory -->
-            <div class="single_catagory_area d-flex align-items-center bg-img" style="background-image: url({{ asset('assets/karl/img/bg-img/bg-3.jpg')}});">
-                <div class="catagory-content">
-                    <h6>in Bags excepting the new collection</h6>
-                    <h2>Designer bags</h2>
-                    <a href="#" class="btn karl-btn">SHOP NOW</a>
-                </div>
-            </div>
-        </section> --}}
-        <!-- ****** Top Catagory Area End ****** -->
-
-        <!-- ****** Quick View Modal Area Start ****** -->
-        @php $i=1; @endphp
-        @for($i=1; $i<=3; $i++)
-        <div class="modal fade" id="quickview-{{$i}}" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-
-                    <div class="modal-body">
-                        <div class="quickview_body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-12 col-lg-5">
-                                        <div class="quickview_pro_img">
-                                            <img src="{{ asset('assets/karl/img/product-img/product-1.jpg')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-7">
-                                        <div class="quickview_pro_des">
-                                            <h4 class="title">Boutique Silk Dress</h4>
-                                            <div class="top_seller_product_rating mb-15">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </div>
-                                            <h5 class="price">$120.99 <span>$130</span></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia expedita quibusdam aspernatur, sapiente consectetur accusantium perspiciatis praesentium eligendi, in fugiat?</p>
-                                            <a href="#">View Full Product Details</a>
-                                        </div>
-                                        <!-- Add to Cart Form -->
-                                        <form class="cart" method="post">
+        <!-- ****** Cart Area Start ****** -->
+        <div class="cart_area section_padding_100 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cart-table clearfix">
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cart_product_img d-flex align-items-center">
+                                            <a href="#"><img src="{{ asset('assets/karl/img/product-img/product-9.jpg')}}" alt="Product"></a>
+                                            <h6>Yellow Cocktail Dress</h6>
+                                        </td>
+                                        <td class="price"><span>$49.88</span></td>
+                                        <td class="qty">
                                             <div class="quantity">
                                                 <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-
-                                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
-
+                                                <input type="text" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="1">
                                                 <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                             </div>
-                                            <button type="submit" name="addtocart" value="5" class="cart-submit">Add to cart</button>
-                                            <!-- Wishlist -->
-                                            <div class="modal_pro_wishlist">
-                                                <a href="wishlist.html" target="_blank"><i class="ti-heart"></i></a>
-                                            </div>
-                                            <!-- Compare -->
-                                            <div class="modal_pro_compare">
-                                                <a href="compare.html" target="_blank"><i class="ti-stats-up"></i></a>
-                                            </div>
-                                        </form>
+                                        </td>
+                                        <td class="total_price"><span>$49.88</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                                        <div class="share_wf mt-30">
-                                            <p>Share With Friend</p>
-                                            <div class="_icon">
-                                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="cart-footer d-flex mt-30">
+                            <div class="back-to-shop w-50">
+                                <a href="shop-grid-left-sidebar.html">Continue shooping</a>
                             </div>
+                            <div class="update-checkout w-50 text-right">
+                                <a href="#">clear cart</a>
+                                <a href="#">Update cart</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="coupon-code-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Cupon code</h5>
+                                <p>Enter your cupone code</p>
+                            </div>
+                            <form action="#">
+                                <input type="search" name="search" placeholder="#569ab15">
+                                <button type="submit">Apply</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="shipping-method-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Shipping method</h5>
+                                <p>Select the one you want</p>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio1"><span>Next day delivery</span><span>$4.99</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio2"><span>Standard delivery</span><span>$1.99</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio3"><span>Personal Pickup</span><span>Free</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-total-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Cart total</h5>
+                                <p>Final info</p>
+                            </div>
+
+                            <ul class="cart-total-chart">
+                                <li><span>Subtotal</span> <span>$59.90</span></li>
+                                <li><span>Shipping</span> <span>Free</span></li>
+                                <li><span><strong>Total</strong></span> <span><strong>$59.90</strong></span></li>
+                            </ul>
+                            <a href="checkout.html" class="btn karl-checkout-btn">Proceed to checkout</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @endfor
-        <!-- ****** Quick View Modal Area End ****** -->
-
-        <!-- ****** New Arrivals Area Start ****** -->
-        <section class="new_arrivals_area section_padding_100_0 clearfix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section_heading text-center">
-                            <h2>New Arrivals</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="karl-projects-menu mb-100">
-                <div class="text-center portfolio-menu">
-                    <button class="btn active" data-filter="*">ALL</button>
-                    <button class="btn" data-filter=".women">WOMAN</button>
-                    <button class="btn" data-filter=".man">MAN</button>
-                    <button class="btn" data-filter=".access">ACCESSORIES</button>
-                    <button class="btn" data-filter=".shoes">shoes</button>
-                    <button class="btn" data-filter=".kids">KIDS</button>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row karl-new-arrivals" id="isinya" >
-                    
-                </div>
-            </div>
-        </section>
-        <!-- ****** New Arrivals Area End ****** -->
-
-        <!-- ****** Offer Area Start ****** -->
-        {{-- <section class="offer_area height-700 section_padding_100 bg-img" style="background-image: url({{ asset('assets/karl/img/bg-img/bg-5.jpg')}});">
-            <div class="container h-100">
-                <div class="row h-100 align-items-end justify-content-end">
-                    <div class="col-12 col-md-8 col-lg-6">
-                        <div class="offer-content-area wow fadeInUp" data-wow-delay="1s">
-                            <h2>White t-shirt <span class="karl-level">Hot</span></h2>
-                            <p>* Free shipping until 25 Dec 2017</p>
-                            <div class="offer-product-price">
-                                <h3><span class="regular-price">$25.90</span> $15.90</h3>
-                            </div>
-                            <a href="#" class="btn karl-btn mt-30">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-        <!-- ****** Offer Area End ****** -->
-
-        <!-- ****** Popular Brands Area Start ****** -->
-        <section class="karl-testimonials-area section_padding_100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section_heading text-center">
-                            <h2>Testimonials</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="karl-testimonials-slides owl-carousel">
-
-                            <!-- Single Testimonial Area -->
-                            <div class="single-testimonial-area text-center">
-                                <span class="quote">"</span>
-                                <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
-                                <div class="testimonial-info d-flex align-items-center justify-content-center">
-                                    <div class="tes-thumbnail">
-                                        <img src="{{ asset('assets/karl/img/bg-img/tes-2.jpg')}}" alt="">
-                                    </div>
-                                    <div class="testi-data">
-                                        <p>maya maysaroh</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Testimonial Area -->
-                            <div class="single-testimonial-area text-center">
-                                <span class="quote">"</span>
-                                <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
-                                <div class="testimonial-info d-flex align-items-center justify-content-center">
-                                    <div class="tes-thumbnail">
-                                        <img src="{{ asset('assets/karl/img/bg-img/tes-3.jpg')}}" alt="">
-                                    </div>
-                                    <div class="testi-data">
-                                        <p>maitsa pramudita</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Testimonial Area -->
-                            <div class="single-testimonial-area text-center">
-                                <span class="quote">"</span>
-                                <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
-                                <div class="testimonial-info d-flex align-items-center justify-content-center">
-                                    <div class="tes-thumbnail">
-                                        <img src="{{ asset('assets/karl/img/bg-img/tes-3.jpg')}}" alt="">
-                                    </div>
-                                    <div class="testi-data">
-                                        <p>sinta</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- ****** Popular Brands Area End ****** -->
+        <!-- ****** Cart Area End ****** -->
 
         <!-- ****** Footer Area Start ****** -->
         <footer class="footer_area">
@@ -486,12 +330,12 @@
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="single_footer_area">
                             <div class="footer-logo">
-                                <img src="{{ asset('assets/karl/img/core-img/irma.png')}}" alt="">
+                                <img src="{{ asset('assets/karl/img/core-img/logo.png')}}" alt="">
                             </div>
                             <div class="copywrite_text d-flex align-items-center">
-                                {{-- <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p> --}}
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                             </div>
                         </div>
                     </div>
@@ -555,9 +399,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- /.wrapper end -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    
-    <script src="{{ asset('assets/karl/js/jquery/jquery-2.2.4.min.js')}}"></script>
-    <script src="{{asset('js/produk.js')}}"></script>
+    <script src="{{ asset('assets/karl/js/jquery/jquery-2.2.4.mi')}}n.js"></script>
     <!-- Popper js -->
     <script src="{{ asset('assets/karl/js/popper.min.js')}}"></script>
     <!-- Bootstrap js -->
@@ -566,7 +408,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ asset('assets/karl/js/plugins.js')}}"></script>
     <!-- Active js -->
     <script src="{{ asset('assets/karl/js/active.js')}}"></script>
-  
+
 </body>
 
 </html>

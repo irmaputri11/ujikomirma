@@ -24,7 +24,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="{{asset('assets/backend/img/favicon.png')}}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-   irma skincare | Admin
+    Paper Dashboard 2 by Creative Tim
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -76,7 +76,7 @@ The above copyright notice and this permission notice shall be included in all c
               <p>User Profile</p>
             </a>
           </li>
-
+          
           <li>
             <a href="./notifications.html">
               <i class="nc-icon nc-bell-55"></i>
@@ -186,8 +186,8 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="content">
         <div class="row">
             <div class="card">
-
-            <h5 class="card-header">Data Tables produk</h5><br>
+                
+            <h5 class="card-header">Data Tables jenis produk</h5><br>
                 <center>
                 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -199,61 +199,37 @@ The above copyright notice and this permission notice shall be included in all c
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Tambah Data Produk</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Tambah Data jenis_produk</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
+        
 <section class="page-content container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card">
                         <center>
-                                <div class="card-header">Tambah produk</div>
+                                <div class="card-header">Tambah jenis produk</div>
                             </center>
-
+            
                             <div class="card-body">
-                                <form action="{{route('produk.store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('jenis_produk.store')}}" method="post" enctype="multipart/form-data">
                                     {{csrf_field()}}
-                                    <div class="form-group">
-                                        <label for="">kode produk</label>
-                                        <input class="form-control" type="text"
-                                        name="kd_produk" id="" required>
-                                    </div>
+                                    
 
                                     <div class="form-group">
-                                        <label for="">nama_produk</label><br>
-                                        <input class="form-control" type="text"
-                                        name="nama_produk" id="" required>
-                                    </div>
-
-                      
-                                    <div class="form-group">
-                                        <label for="">stok</label>
-                                        <input class="form-control" type="text"
-                                        name="stok" id="" required>
-                                       
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">harga</label>
-                                        <input class="form-control" type="text"
-                                        name="harga" id="" required>
-                                        
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">deskripsi</label>
-                                        <input class="form-control" type="text"
-                                        name="deskripsi" id="" required>
-                                        
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Foto</label>
-                                        <input class="form-control" type="file"
-                                        name="foto" id="" required>
-                                       
-                                    </div>
+                                            <label for="">nama jenis_produk</label><br>
+                                            <input class="form-control ckeditor"
+                                            name="nama_jenis_produk" id=""  required>
+                                            </input>
+                                            @error('nama_jenis_produk')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{$message}}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-outline-info btn-rounded btn-block">
                                             Simpan Data
@@ -266,7 +242,7 @@ The above copyright notice and this permission notice shall be included in all c
                 </div>
             </section>
       </div>
-
+     
     </div>
   </div>
 </div>
@@ -274,37 +250,24 @@ The above copyright notice and this permission notice shall be included in all c
     <table id="bs4-table" class="table table-striped table-bordered" style="width:100%">
       <thead>
         <tr>
-            <th>id produk</th>
-          <th>kode produk</th>
+          <th>id jenis produk</th>
           <th>nama produk</th>
-          
-          <th>stok</th>
-          <th>harga</th>
-          <th>deskripsi</th>
-          <th>Foto</th>
           <th style="text-align: center;">Aksi</th>
         </tr>
         </thead>
            <tbody>
-               @php $no=1; @endphp
-                 @foreach ($produk  as $data)
+           @php $no=1; @endphp
+                 @foreach ($js  as $data)
                     <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$data->kd_produk}}</td>
-                        <td>{{$data->nama_produk}}</td>
-                        <td>{{$data->stok}}</td>
-                        <td>{{$data->harga}}</td>
-                        <td>{{$data->deskripsi}}</td>
-                        <td><img src="{{asset('assets/img/produk/' .$data->foto. '')}}"
-                                style="width:250px; height:250px;" alt="Foto"></td>
-
-						            <td style="text-align: center;">
-                            <form action="{{route('produk.destroy', $data->id)}}" method="post">
+                        <td>{{$data->nama_jenis_produk}}</td>
+        
+						<td style="text-align: center;">
+                            <form action="{{route('jenis_produk.destroy', $data->id)}}" method="post">
                                {{csrf_field()}}
-								            <a href="{{route('produk.edit', $data->id)}}"
-                                class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline" data-toggle="modal" data-target="#myModal"> Edit
-                            </a>
-
+                                <a href="{{route('jenis_produk.edit', $data->id)}}"
+                                 class="zmdi zmdi-edit btn btn-warning btn-rounded btn-floating btn-outline" data-toggle="modal" data-target="#exampleModalCenter">edit
+                                 </a>
                                 <input type="hidden" name="_method" value="DELETE">
 									<button type="submit" class="zmdi zmdi-delete btn-rounded btn-floating btn btn-dangerbtn btn-danger btn-outline"> Delete</button>
 							</form>
@@ -317,7 +280,7 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
   </div>
             </div>
-
+        
   <!--   Core JS Files   -->
   <script src="{{asset('assets/backend/js/core/jquery.min.js')}}"></script>
   <script src="{{asset('assets/backend/js/core/popper.min.js')}}"></script>

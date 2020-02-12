@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\jenis_produk;
+use Session;
 
-class frontend extends Controller
+class jenis_produkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,32 +15,9 @@ class frontend extends Controller
      */
     public function index()
     {
-        return view('index');
-    }
-
-    public function shop()
-    {
-        return view('shop');
-    }
-
-    public function produk_detail()
-    {
-        return view('produk-detail');
-    }
-
-    public function admin()
-    {
-        return view('admin');
-    }
-
-    public function contact()
-    {
-        return view('contact');
-    }
-
-    public function card()
-    {
-        return view('card');
+        $js = jenis_produk::all();
+        // return view('backend.jenis_produk.index', compact('jenis_produk'));
+        return view('backend.jenis_produk.index',compact('js'));
     }
 
     /**
@@ -48,7 +27,9 @@ class frontend extends Controller
      */
     public function create()
     {
-        //
+        $js = jenis_produk::all();
+        // dd($tag);
+        return view('backend.jenis_produk.create', compact('js'));
     }
 
     /**
@@ -59,7 +40,11 @@ class frontend extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $js = new jenis_produk();
+        $js->nama_jenis_produk = $request->nama_jenis_produk;
+        $js->save();
+        return redirect()->route('jenis_produk.index'); 
+
     }
 
     /**
@@ -81,7 +66,8 @@ class frontend extends Controller
      */
     public function edit($id)
     {
-        //
+        $js = jenis_produk::findOrfail($id);
+        return view('backend.jenis_produk.edit',compact('js'));
     }
 
     /**
@@ -104,6 +90,14 @@ class frontend extends Controller
      */
     public function destroy($id)
     {
-        //
+        $js = jenis_produk::findOrfail($id);
+        if(!jenis_produk::destroy($id)) return redirect()->back();
+        Session::flash("flash_notification",[
+            "level" => "Success",
+            "message" => "Berhasil menghapus<b>"
+                         . $js->nama_jenis_produk."</b>"
+        ]);
+        return redirect()->route('jenis_produk.index');
+
     }
 }
